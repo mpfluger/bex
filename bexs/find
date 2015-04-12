@@ -1,4 +1,6 @@
+# Find files
 find . -type f -size +10000 -exec ls -al {} \;
 
-see
--- http://www.wagoneers.com/UNIX/FIND/find-usage.html
+## -type f: files (not directories or links)
+## -size: file size
+## -exec: exec command for each file {}

@@ -1,16 +1,33 @@
 # Read var from stdin and do something on condition
 read -n 1 -p "yes? - " y; echo $y; if [[ $y == "y" ]] ;then echo 1; fi
 
-# Replace
-X=´echo $Y | sed 's/foo/bar/(g)'´ sparen und durch Konstrukte wie
-X=${X(/|//|#|##|%|%%)blah(/sülz)} ersetzen.
+# Search and replace
+x=${x/foo/bar}
+
+# String extraction
+${x:1:5}
+
+# For loop
+for x in "*.md"; do echo $x; done
+for x in `seq 1 100`; do echo $x; done
+
+# If
+if [ -e FILE ]; then echo "FILE exists"; fi
+
+# Maths
+if (( 1 == 1)); then echo "true"; fi
+if (( 1 < 2)); then echo "true"; fi
+
+# Execution
+x=$(cat FILE)
+x=`cat FILE`
 
 # Debug
 sh -xv
 
-#     -v verbose
-#        The shell writes its input to standard error as it is read. Use-
-#        ful for debugging.
-#     -x xtrace
-#        Write each command (preceded by ``+ '') to standard error before
-#        it is executed.  Useful for debugging.
+##     -v verbose
+##        The shell writes its input to standard error as it is read. Use-
+##        ful for debugging.
+##     -x xtrace
+##        Write each command (preceded by ``+ '') to standard error before
+##        it is executed.  Useful for debugging.

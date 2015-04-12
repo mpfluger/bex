@@ -1,1 +1,2 @@
-env -- set and print environment
+# Set and print environment variables
+env

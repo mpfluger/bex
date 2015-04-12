@@ -1,2 +1,4 @@
 # Doc for command example
 command --example --switch --foo=bar
+
+## Doc for switches: --example: does foo

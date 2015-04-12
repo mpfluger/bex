@@ -1,4 +1,6 @@
-Grep
-====
-
+# Search for text
 grep -e "exp1" -e "exp2" -C2 [-v] -H
+
+## -e: expression
+## -Cx: print x lines before and after result
+## -H: always print filename

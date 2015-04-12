@@ -1,2 +1,2 @@
-# ein neues "X" auf einer anderen Konsole aufmachen. (Alt+F8)
+# Open X session on a given console
 startx -- :3

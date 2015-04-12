@@ -1,5 +1,4 @@
-comm -- select or reject lines common to two files
+# Remove all lines common to both files
+comm -3 f1 f2
 
-    comm -3 f1 f2
 
-Remove all lines common to both files

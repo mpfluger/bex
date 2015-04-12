@@ -1,1 +1,0 @@
-ps -aeo user,group,state,args,cputime,pid,tty,priority

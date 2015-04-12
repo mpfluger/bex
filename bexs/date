@@ -1,2 +1,2 @@
-date --date='54 days'
-date --date='5 days ago'
+# Date in YYYYMMDD format
+date=$(date +%Y%m%d)

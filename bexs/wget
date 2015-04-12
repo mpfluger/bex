@@ -1,6 +1,7 @@
-wget -r -l 1 -p -k http://test.com/todl
+# Download
+wget -r -l 1 -p -k http://foo.com/bar
 
--r recursive
--l 1 depth 1
--p page requisites 
--k convert links (for local viewing)
+## -r recursive
+## -l 1 depth 1
+## -p page requisites
+## -k convert links (for local viewing)

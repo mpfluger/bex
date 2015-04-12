@@ -1,5 +1,7 @@
-# gute options zum backupen
+# Backup
 cp -dpPR
 
-# -P preserve permissions
-# -d links gut handeln no-deref
+## -d links: no-deref
+## -p preserve attributes
+## -P preserve permissions
+## -R recursive
