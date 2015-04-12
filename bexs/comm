@@ -1,4 +1,2 @@
 # Remove all lines common to both files
 comm -3 f1 f2
-
-

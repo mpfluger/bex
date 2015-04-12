@@ -1,0 +1,6 @@
+# A command line HTTP client
+# https://pypi.python.org/pypi/httpie
+http https://foo.com/bar
+
+# Only show header
+http -h 'https://foo.com/bar?foo=bar&bar=baz'

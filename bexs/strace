@@ -1,0 +1,5 @@
+# Trace system calls and signals
+strace COMMAND
+
+# On Mac OS X
+sudo dtruss COMMAND

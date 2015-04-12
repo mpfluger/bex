@@ -1,0 +1,12 @@
+# Terminal multiplexer
+# start a screen session
+screen
+
+# Reattach
+screen -r
+
+# Aggressive deattach/reattach (after losing connection for example)
+screen -DR
+
+# Remove dead sessions
+screen -wipe

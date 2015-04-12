@@ -96,29 +96,36 @@ if [ $numargs -lt 1 ]; then
    usage
 fi
 
+# option -w -- print whatis info
+if (($whatis == 1)); then
+    if [ ! -e $(which whatis) ] || [ ! -x $(which whatis) ]; then
+        echo "error: whatis command not found"
+        exit 127
+    fi
+    whatis ${name}
+    echo ""
+fi
+
 if [ ! -d ${bexdir} ]; then
    echo "error: bexdir \"${bexdir}\" not found"
-   exit 2
+   exit 3
 fi
 
 # option -e -- edit bex info file
-if (($edit== 1)); then
+if (($edit == 1)); then
+    if [ ! -e $(which ${EDITOR}) ] || [ ! -x $(which ${EDITOR}) ]; then
+        echo "error: editor ${EDITOR} not found"
+        exit 127
+    fi
     ${EDITOR} ${bexdir}/${name}
     exit 0
 fi
 
 if [ ! -f ${bexdir}/${name} ]; then
    echo "error: no bexinfo for \"${name}\""
-   exit 3
+   exit 4
 fi
 
-
-# option -w -- print whatis info
-if (($whatis == 1)); then
-    # TODO check for existence of whatis
-    whatis ${name}
-    echo ""
-fi
 
 # TODO add colors:
 # sed -e 's,^#,\\033[1;31m#,g' bash | while read LINE; do echo -e $LINE; done
