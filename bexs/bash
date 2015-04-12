@@ -1,0 +1,16 @@
+# Read var from stdin and do something on condition
+read -n 1 -p "yes? - " y; echo $y; if [[ $y == "y" ]] ;then echo 1; fi
+
+# Replace
+X=´echo $Y | sed 's/foo/bar/(g)'´ sparen und durch Konstrukte wie
+X=${X(/|//|#|##|%|%%)blah(/sülz)} ersetzen.
+
+# Debug
+sh -xv
+
+#     -v verbose
+#        The shell writes its input to standard error as it is read. Use-
+#        ful for debugging.
+#     -x xtrace
+#        Write each command (preceded by ``+ '') to standard error before
+#        it is executed.  Useful for debugging.

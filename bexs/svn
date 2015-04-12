@@ -1,0 +1,20 @@
+#intro to svn
+
+#on the server
+svnadmin create /var/svn/reposx
+# adjust permissions
+chown -R apache:svnusers /var/svn/repos/your-project
+chmod -R g-w /var/svn/repos/your-project
+chmod -R g+rw /var/svn/repos/your-project/db
+chmod -R g+rw /var/svn/repos/your-project/locks
+
+#on the client
+svn import ~/dir/to/proj svn+ssh://tiamat/var/svn/reposx/proj
+svn commit -m "bla bla"
+svn propset svn:keywords "Id" *
+
+#some fun stuff
+svn log -r {2011-11-13}:HEAD
+svn diff -r r264:r265
+#log -v shows all the changed files in that revision
+svn log -v -r r263

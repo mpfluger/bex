@@ -1,0 +1,2 @@
+# zum debuggen nehme man
+make -n -q --debug=bj

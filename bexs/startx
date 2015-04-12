@@ -1,0 +1,2 @@
+# ein neues "X" auf einer anderen Konsole aufmachen. (Alt+F8)
+startx -- :3

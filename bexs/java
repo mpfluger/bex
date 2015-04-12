@@ -1,0 +1,2 @@
+# starts java with the jmp profiler in place
+java 	-Xrunjmp

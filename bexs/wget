@@ -1,0 +1,6 @@
+wget -r -l 1 -p -k http://test.com/todl
+
+-r recursive
+-l 1 depth 1
+-p page requisites 
+-k convert links (for local viewing)

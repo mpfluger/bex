@@ -1,0 +1,7 @@
+# replacen mit platzhalter
+# und groß- klein zeug
+cat commands.txt | sed -e 's,\(.*\),"\L\1" \t\t{ return new Symbol(\U\1); },g'
+
+This example will delete starting at line 1, up to and including the next line containing Jack:
+
+sed '1,/Jack/d' poem.txt

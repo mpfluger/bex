@@ -1,0 +1,5 @@
+# gute options zum backupen
+cp -dpPR
+
+# -P preserve permissions
+# -d links gut handeln no-deref

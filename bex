@@ -1,0 +1,129 @@
+#!/bin/sh
+#
+# by Mark Pflüger <mark@pfluegerworl.de>
+# created jan 2005
+#
+# shows small (user generated) examples for programs
+#
+
+# directory where the bex files reside
+bexdir=~/.bexs
+EDITOR=vim
+
+# do NOT edit below this this line
+version=0.2.0
+invoke_name=`basename ${0}`
+name=
+whatis=0
+numargs=0
+edit=0
+
+usage() {
+    echo "Usage: ${invoke_name} [OPTIONS] name"
+    echo "show example invocations for program name"
+    echo ""
+    echo "list of options"
+    echo "  -v 		version info"	
+    echo "  -h 		show help"	
+    echo "  -w		show whatis info"
+    echo "  -l		show list of all bexinfo files"
+    echo "  -a		show list of all bexinfo files with content"
+    echo "  -e		edit given bexinfo file"
+    echo "     --version		version info"
+    echo "     --help		show help"
+    echo "     --whatis		show whatis info"
+    echo "     --list		show list of all bexinfo files"
+    echo "     --all		show list of all bexinfo files with content"
+    echo "     --edit		edit given bexinfo file"
+    exit 1
+}
+
+version() {
+    echo "${invoke_name} ${version}"
+    exit 1
+}
+
+list() {
+   ls -1 ${bexdir}
+   exit 0
+}
+
+all() {
+   pushd ${bexdir} > /dev/null
+   for x in *; do
+      echo $x
+      cat $x | sed s,^,'   ',g   # add some indention
+      echo ""
+   done
+   popd > /dev/null
+   exit 0
+}
+
+# command line arguments
+while [ ".$1" != "." ]; do
+   (( numargs = $numargs + 1 ))
+   # check arg
+   case "$1"
+   in
+      "--help" | "-h" )
+         usage
+         ;;
+      "--version" | "-v" )
+         version
+         ;;
+      "--whatis" | "-w" )
+         whatis=1
+         ;;
+      "--list" | "-l" )
+         list
+         ;;
+      "--all" | "-a" )
+         all
+         ;;
+      "--edit" | "-e" )
+         edit=1
+         ;;
+      *)
+         name=${1}
+	 ;;
+   esac
+   shift
+done
+
+if [ $numargs -lt 1 ]; then
+   echo "error: at least one arg"
+   echo ""
+   usage
+fi
+
+if [ ! -d ${bexdir} ]; then
+   echo "error: bexdir \"${bexdir}\" not found"
+   exit 2
+fi
+
+# option -e -- edit bex info file
+if (($edit== 1)); then
+    ${EDITOR} ${bexdir}/${name}
+    exit 0
+fi
+
+if [ ! -f ${bexdir}/${name} ]; then
+   echo "error: no bexinfo for \"${name}\""
+   exit 3
+fi
+
+
+# option -w -- print whatis info
+if (($whatis == 1)); then
+    # TODO check for existence of whatis
+    whatis ${name}
+    echo ""
+fi
+
+# TODO add colors:
+# sed -e 's,^#,\\033[1;31m#,g' bash | while read LINE; do echo -e $LINE; done
+# printf $(sed -e 's,^#,\\033[1;31m#,g' bash)
+cat ${bexdir}/${name}
+
+# and exit
+exit 0

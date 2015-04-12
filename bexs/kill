@@ -1,0 +1,3 @@
+# job control mit signals
+kill -TSTP
+kill -CONT
