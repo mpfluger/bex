@@ -1,6 +1,6 @@
-# Which commit does a tag point to
-git rev-list <tag_name> | head -n 1
+# Which commit does TAG point to
+git rev-list TAG | head -n 1
 
 # Push tags
 git push --tags
-git push origin <tag_name>
+git push origin TAG
