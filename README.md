@@ -4,16 +4,10 @@ Ever forget the sed one-liner to remove double newlines? Or the parameters to cr
 
 ## Install
 
-Move `bex` to some folder in your `$PATH`:
+Create a symbolic link to `bex` in some folder in your `$PATH`:
 
 ```sh
-cp bex /usr/local/bin
-```
-
-Configure the default directory to keep bex files (bexs) and optionally move the default bexs there. The default directory for bexs is set to `~/.bexs` in `bex`.
-
-```sh
-cp -R ./bexs ~/.bexs
+ln -s $(pwd)/bex /usr/local/bin/bex
 ```
 
 ## Run
@@ -44,5 +38,4 @@ bex -h
 
 ## Configure
 
-You can set your favorite editor and the location of bexs in the top part of `bex`. Just change the relevant variables.
-
+You can set your favorite editor in the top part of `bex`. Just change the EDITOR variable.

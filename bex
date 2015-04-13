@@ -6,11 +6,10 @@
 # shows small (user generated) examples for programs
 #
 
-# directory where the bex files reside
-bexdir=./bexs/
 EDITOR=vim
 
 # do NOT edit below this this line
+bexdir=$(dirname $(readlink $0))/bexs
 version=0.2.0
 invoke_name=`basename ${0}`
 name=
