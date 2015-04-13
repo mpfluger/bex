@@ -7,7 +7,7 @@
 #
 
 # directory where the bex files reside
-bexdir=~/.bexs
+bexdir=./bexs/
 EDITOR=vim
 
 # do NOT edit below this this line
@@ -51,8 +51,15 @@ list() {
 all() {
    pushd ${bexdir} > /dev/null
    for x in *; do
-      echo $x
-      cat $x | sed s,^,'   ',g   # add some indention
+       tput setaf 5; echo $x; tput setaf sgr0
+       while read a; do
+           # Colors
+           echo $a | grep "^#" > /dev/null && tput setaf 6
+           echo $a | grep "^##" > /dev/null && tput setaf 4
+           echo $a | grep "^[^#]" > /dev/null && tput setaf 7
+           echo $a
+           tput sgr0
+       done < $x
       echo ""
    done
    popd > /dev/null
@@ -127,10 +134,14 @@ if [ ! -f ${bexdir}/${name} ]; then
 fi
 
 
-# TODO add colors:
-# sed -e 's,^#,\\033[1;31m#,g' bash | while read LINE; do echo -e $LINE; done
-# printf $(sed -e 's,^#,\\033[1;31m#,g' bash)
-cat ${bexdir}/${name}
+while read a; do
+    # Colors
+    echo $a | grep "^#" > /dev/null && tput setaf 6
+    echo $a | grep "^##" > /dev/null && tput setaf 4
+    echo $a | grep "^[^#]" > /dev/null && tput setaf 7
+    echo $a
+    tput sgr0
+done < ${bexdir}/${name}
 
 # and exit
 exit 0
