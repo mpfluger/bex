@@ -1,0 +1,5 @@
+# List of users currently logged in
+who
+
+# List of users currently logged in to current host
+users

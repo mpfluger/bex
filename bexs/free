@@ -1,0 +1,5 @@
+# Show memory usage
+free -m
+
+## On Mac OS X: vm_stat
+## List of programs, mem usage, load: top

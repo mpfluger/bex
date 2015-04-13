@@ -1,0 +1,10 @@
+# GNU Binutils - get info about executables
+
+# size of the sections in an object file
+size FILE
+
+# printable strings in binary files
+strings FILE
+
+# dispaly symbol table
+nm FILE

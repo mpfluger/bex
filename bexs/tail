@@ -1,0 +1,2 @@
+# Print last lines of file and watch for changes
+tail -f FILE

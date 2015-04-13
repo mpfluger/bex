@@ -1,0 +1,8 @@
+# Sync directories
+rsync -auzvb SRC DEST
+
+## -a archive
+## -u update - skip files that are newer on DEST
+## -z compress (for syncing over network)
+## -v verbose
+## -b backup (create backup files for files that are overwritten)

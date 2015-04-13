@@ -1,0 +1,2 @@
+# Print first N lines of FILE
+head -nN FILE

@@ -1,0 +1,7 @@
+# Tunnel traffic from localhost through SERVER using SOCKS
+ssh -D 5000 -N USER@SERVER
+
+## Now set localhost:5000 as SOCKS proxy and all traffic will be tunneled
+
+# Set up a tunnel from localhost:6000 to REMOTE:8080 via SERVER
+ssh -L 6000:REMOTE:8080 USER@SERVER

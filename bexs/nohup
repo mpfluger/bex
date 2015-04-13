@@ -1,0 +1,2 @@
+# Continue running command after logging out
+nohup COMMAND &
