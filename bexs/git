@@ -4,3 +4,11 @@ git rev-list TAG | head -n 1
 # Push tags
 git push --tags
 git push origin TAG
+
+# Delete tag (remote and local)
+git push --delete origin TAG
+git tag -d TAG
+
+# Delete branch (remote and local)
+git push --delete origin BRANCH
+git branch -d BRANCH
