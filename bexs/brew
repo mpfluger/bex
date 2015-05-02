@@ -1,0 +1,5 @@
+# Show all installed packages
+brew list
+
+# Show all top-level packages (no dependencies)
+brew leaves
