@@ -12,3 +12,7 @@ git tag -d TAG
 # Delete branch (remote and local)
 git push --delete origin BRANCH
 git branch -d BRANCH
+
+# Add existing repo to github
+git remote add origin git@github.com:USER/REPO.git
+git push -u origin master
