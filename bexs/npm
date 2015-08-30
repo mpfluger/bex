@@ -1,0 +1,11 @@
+# Install a package and save to package.json
+npm install --save-dev PACKAGE
+
+# Install globally
+npm install -g PACKAGE
+
+# List installed packages
+npm ls -g --depth=0
+
+## -g global
+## --depth only top-level packages, not their dependencies
