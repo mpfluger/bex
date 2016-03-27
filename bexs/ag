@@ -1,0 +1,11 @@
+# Search
+
+ag foo
+
+# Case Sensitive search
+
+ag Foo
+
+## -u search all files
+## --java only search java files
+## --list-file-types list all of known file type aliases
